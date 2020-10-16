@@ -13,9 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_10_13_171825) do
 
   create_table "currencies", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
-    t.integer "amount"
+    t.string "currencyName"
+    t.float "currencyAmount"
+    t.string "convertedName"
+    t.float "convertedAmount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

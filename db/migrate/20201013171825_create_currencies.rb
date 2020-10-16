@@ -1,11 +1,13 @@
 class CreateCurrencies < ActiveRecord::Migration[6.0]
   def change
     create_table :currencies do |t|
-      t.string :name
-      t.string :country
-      t.integer :amount
+      t.string :currencyName
+      t.float :currencyAmount
+      t.string :convertedName
+      t.float :convertedAmount
 
       t.timestamps
     end
   end
 end
+
