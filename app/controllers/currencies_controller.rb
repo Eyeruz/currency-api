@@ -46,6 +46,7 @@ class CurrenciesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def currency_params
-      params.require(:currency).permit(:name, :country, :amount)
+      params.require(:currency).permit(:currencyName, :currencyAmount, :convertedName, :convertedAmount)
     end
 end
+
