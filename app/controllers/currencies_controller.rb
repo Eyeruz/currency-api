@@ -36,6 +36,8 @@ class CurrenciesController < ApplicationController
   # DELETE /currencies/1
   def destroy
     @currency.destroy
+    render json: {message: 'successful deletion'}
+
   end
 
   private
