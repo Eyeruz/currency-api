@@ -3,8 +3,13 @@ class CurrencyHistoriesController < ApplicationController
 
   # GET /currency_histories
   def index
+    # binding.pry
+    if params[:user_id]
+      user = User.find_by_id(params[:user_id])
+      @currency_histories = user.currency_histories
+      else
     @currency_histories = CurrencyHistory.all
-
+      end
     render json: @currency_histories
   end
 
@@ -15,14 +20,16 @@ class CurrencyHistoriesController < ApplicationController
 
   # POST /currency_histories
   def create
-    @currency_history = CurrencyHistory.new(currency_history_params)
-
-    if @currency_history.save
+    if params[:user_id]
+      user = User.find_by_id(params[:user_id])
+      @currency_history = user.currency_histories.build(currency_history_params)
+if @currency_history.save
       render json: @currency_history, status: :created, location: @currency_history
     else
       render json: @currency_history.errors, status: :unprocessable_entity
     end
   end
+end
 
 
   # PATCH/PUT /currency_histories/1
@@ -38,6 +45,8 @@ class CurrencyHistoriesController < ApplicationController
   # DELETE /currency_histories/1
   def destroy
     @currency_history.destroy
+    render json: {message: 'successful deletion'}
+
   end
 
   private
