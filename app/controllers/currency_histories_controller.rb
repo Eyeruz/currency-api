@@ -24,6 +24,7 @@ class CurrencyHistoriesController < ApplicationController
     end
   end
 
+
   # PATCH/PUT /currency_histories/1
   def update
     if @currency_history.update(currency_history_params)
@@ -32,6 +33,7 @@ class CurrencyHistoriesController < ApplicationController
       render json: @currency_history.errors, status: :unprocessable_entity
     end
   end
+
 
   # DELETE /currency_histories/1
   def destroy

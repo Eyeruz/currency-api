@@ -6,6 +6,7 @@ class CreateCurrencyHistories < ActiveRecord::Migration[6.0]
       t.string :convertedName
       t.float :convertedAmount
       t.date :convertedDate
+      t.belongs_to :user
 
       t.timestamps
     end
@@ -13,5 +14,3 @@ class CreateCurrencyHistories < ActiveRecord::Migration[6.0]
 end
 
 
-params.require(:currency_history).permit(:currencyName, :currencyAmount, 
-:convertedName, :convertedAmount, :convertedDate)

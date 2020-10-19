@@ -3,8 +3,12 @@ class CurrenciesController < ApplicationController
 
   # GET /currencies
   def index
+    if params[:user_id]
+    user = User.find_by_id(params[:user_id])
+    @currencies = user.currencies
+    else
     @currencies = Currency.all
-
+    end
     render json: @currencies
   end
 
@@ -15,14 +19,16 @@ class CurrenciesController < ApplicationController
 
   # POST /currencies
   def create
-    @currency = Currency.new(currency_params)
-
+    if params[:user_id]
+      user = User.find_by_id(params[:user_id])
+@currency = user.currencies.build(currency_params)
     if @currency.save
       render json: @currency, status: :created, location: @currency
     else
       render json: @currency.errors, status: :unprocessable_entity
     end
   end
+end
 
   # PATCH/PUT /currencies/1
   def update

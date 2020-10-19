@@ -5,6 +5,7 @@ class CreateCurrencies < ActiveRecord::Migration[6.0]
       t.float :currencyAmount
       t.string :convertedName
       t.float :convertedAmount
+      t.belongs_to :user
 
       t.timestamps
     end

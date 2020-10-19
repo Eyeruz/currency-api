@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2020_10_18_211314) do
     t.float "currencyAmount"
     t.string "convertedName"
     t.float "convertedAmount"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_currencies_on_user_id"
   end
 
   create_table "currency_histories", force: :cascade do |t|
@@ -27,8 +29,10 @@ ActiveRecord::Schema.define(version: 2020_10_18_211314) do
     t.string "convertedName"
     t.float "convertedAmount"
     t.date "convertedDate"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_currency_histories_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
