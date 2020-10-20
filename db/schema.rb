@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_211314) do
     t.float "currencyAmount"
     t.string "convertedName"
     t.float "convertedAmount"
+    t.float "rate"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_10_18_211314) do
     t.string "convertedName"
     t.float "convertedAmount"
     t.date "convertedDate"
+    t.float "rate"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

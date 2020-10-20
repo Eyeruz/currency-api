@@ -6,6 +6,7 @@ class CreateCurrencyHistories < ActiveRecord::Migration[6.0]
       t.string :convertedName
       t.float :convertedAmount
       t.date :convertedDate
+      t.float :rate
       t.belongs_to :user
 
       t.timestamps

@@ -54,7 +54,7 @@ end
 
     # Only allow a trusted parameter "white list" through.
     def currency_params
-      params.require(:currency).permit(:currencyName, :currencyAmount, :convertedName, :convertedAmount)
+      params.require(:currency).permit(:currencyName, :rate, :currencyAmount, :convertedName, :convertedAmount)
     end
 end
 
