@@ -1,24 +1,9 @@
-# README
+# Curreny-converter-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+this is a backend Ruby on Rails (--api only) 
 
-* Ruby version
+run "rails s" or "rails start" while also running the currency-client (front-end) so the app can work properly.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+enjoy :)
